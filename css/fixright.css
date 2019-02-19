@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,textarea,figure{
+	margin:0;
+	padding:0;
+}
+body{
+     font-family:"微软雅黑";
+}
+a{
+     text-decoration:none;
+}
+li{
+     list-style:none;
+}
+.fixright{
+	width: 30px;
+	height: 750px;
+	background: black;
+	position: fixed;
+	right: 0;
+}
+.shopdet{
+	/*height: 500px;*/
+	background: pink;
+}
+.headimg{
+	width: 30px;
+	height: 30px;
+	position: fixed;
+    top: 105px;
+    left: 1319px;
+    border-bottom: 1px solid rgb(120,120,120);
+}
+.gw1{
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	margin-left: 3px;
+	margin-top: 3px;
+}
+.headimg:hover{
+	background: red;
+}
+.shopcar{
+	width: 30px;
+	height: 140px;
+	position: fixed;
+    top: 135px;
+    left: 1319px;
+    border-bottom: 1px solid rgb(120,120,120);
+}
+.shopdet .icon-head104{
+	color:white;
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	padding-top: 20px;
+}
+.shopdet .icon-head104 a{
+	color:white;
+	font-size: 12px;
+	font-weight: 100;
+	text-align: center;
+	width: 12px;
+	/*margin-left: 7px;*/
+}
+.shopcar:hover{
+	background: red;
+}
+.tubiaoa{
+	width: 30px;
+	height: 200px;
+	position: fixed;
+    top: 296px;
+    left: 1319px;
+    overflow: hidden;
+}
+.tubiaoa .icon-qian,.icon-shoucang,.icon-shijian{
+	color: #fff;
+	display: block;
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+	margin-top: 20px;
+	text-align: center;
+	padding-top:5px;
+
+}
+.icon-qian:hover{
+	background: red;
+}
+.icon-shoucang:hover{
+	background: red;
+}
+.icon-shijian:hover{
+	background: red;
+}
+.tubiaob{
+	width: 30px;
+	height: 200px;
+	position: fixed;
+    top: 530px;
+    left: 1319px;
+}
+.icon-yijianfankui,.icon-erweima{
+	color: #fff;
+	display: block;
+	font-size: 20px;
+	width: 30px;
+	height: 25px;
+	margin-top: 20px;
+	text-align: center;
+	padding-top:5px;
+
+}
+.tubiaob .icon-erweima{
+	height: 20px;
+}
+.icon-yijianfankui:hover{
+	background: red;
+}
+.icon-erweima:hover{
+	background: red;
+}

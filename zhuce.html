@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+		   body{background-image:url(img/section2.jpg); background-size:100% 100%;}
+           .container{
+               width: 380px;
+               height: 380px;
+               margin: 0 auto;margin-top: 140px;
+               box-shadow: 0 0 20px #222;
+               border-radius:40px;
+              background-color: rgba(242, 245, 239, 0.842)2);
+           }
+           .right{position:relative;width:280px;left:50px;top:15px;}
+           form{font:14px/20px 微软雅黑;color:rgb(50, 216, 50);}
+           .input{width:180px;height:20px;}
+           img{width:80px;height:34px;}
+           #btnReg{width:70px;margin-right:110px;float:right;height:22px;margin-top:7px;}
+    </style>
+</head>
+<body>
+ <div class="container">
+ <div class="right">
+    <h2>用户注册</h2>
+<hr>
+ <!-- <form action="zhuce.php" method="post" > -->
+    <p>用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;户：<input type="text" id="username" placeholder="请输入用户名"/></p><span id="userSpan"></span>
+    <p>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" id="userpass" name="password" placeholder="请输入密码" /></p>
+	</p>确认密码：<input type="password" placeholder="请确认密码"/></p>
+    <!-- <p>验&nbsp;&nbsp;证&nbsp;&nbsp;码：<input type="text" class="input" name="yzm" id="yzm" placeholder="请输入验证码"></p> -->
+   <!--  <p style="text-align:center"><img src="yanzhengma.php" onClick="this.src='yanzhengma.php?nocache='+Math.random()" style="cursor:hand"></p> -->
+    <p>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input name="usersex" type="radio" value="男">男
+		  <input name="usersex" type="radio" value="女" checked="checked">女</p>
+	<p>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：<input  type="text" id="userage"></p>
+	<p>手机号码：<input  type="text" id="userphone"></p>
+ 	<!-- <p style="text-align:center"><img src="yanzhengma.php" onClick="this.src='yanzhengma.php?nocache='+Math.random()" style="cursor:hand"></p> -->
+ 	<p style="text-align:center"><input id="btnReg" type="submit" value="注册" /></p>
+        <div id="errorMessage" style="display:none;color:red"></div>
+ <!-- </form> -->
+ </div>
+</div>
+</body>
+</html>
+<script>
+function $(str){
+	if(str.charAt(0)=="#"){
+		return document.getElementById(str.substring(1));
+	}else if(str.charAt(0)=="."){
+		return document.getElementsByClassName(str.substring(1));
+	}else{
+		return document.getElementsByTagName(str);
+	}
+}
+window.onload = function(){
+	$("#username").onblur = function(){
+		//1、创建对象
+		let xhr =new XMLHttpRequest();
+
+		//2、设置请求参数
+		xhr.open("post","myfile02.php?username="+this.value,true);
+
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4 && xhr.status==200){
+                $("#userSpan").innerHTML = xhr.responseText;
+			}
+		}
+		xhr.send();
+	}
+
+	$("#btnReg").onclick = function(){
+		//1、创建对象
+		let xhr =new XMLHttpRequest();
+
+		//2、设置请求参数
+		xhr.open("post","regSave.php",true);
+
+		xhr.onreadystatechange = function(){
+
+			if(xhr.readyState==4 && xhr.status==200){
+
+				if(xhr.responseText=="1"){
+					alert("注册成功！")
+					location.href="denglu.html";
+				}else{
+					$("#errorMessage").innerHTML="注册失败！";
+					$("#errorMessage").style.display="block";
+				}
+			}
+		}
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+		let sexs = document.getElementsByName("usersex");
+		var sex = "女";
+		if(sexs[0].checked){
+			sex = "男"; 
+		}
+		let str = `username=${$("#username").value}&userpass=${$("#userpass").value}&usersex=${sex}&userage=${$("#userage").value}&userphone=${$("#userphone").value}`;
+		xhr.send(str);
+	}
+}
+
+</script>

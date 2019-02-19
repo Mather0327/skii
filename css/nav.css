@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body,p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,td,input,select,textarea,figure{
+	margin:0;
+	padding:0;
+}
+body{
+     font-family:"微软雅黑";
+}
+a{
+     text-decoration:none;
+}
+li{
+     list-style:none;
+}
+img{
+     display: block;
+}
+.meau_one{
+
+	background:#333;
+	display: none;
+	position:absolute;
+	width: 1346px;
+	height: 345px;
+	left:-178px;
+	top:50px;
+}
+.nav{
+	position:relative;
+}
+.conter:hover .meau_one{
+	display: block;
+}
+.con_two:hover .meau_one{
+	display: block;
+}
+.con_three:hover .meau_one{
+	display: block;
+}
+.con_four:hover .meau_one{
+	display: block;
+}
+.uls li{
+	float:left;
+
+}
+.uls .li_jifu{
+	padding-left: 184px;
+	
+}
+.uls .li_project,.li_jxinzhi{
+	padding-left: 30px;
+	
+}
+.uls .li_changxiao{
+	padding-left: 100px;
+	
+}
+.meau_one .uls li .minyun{
+	padding-left: 80px;
+	margin-top: 30px;
+	font-size:18px;
+}
+.meau_one .uls li .daiyan{
+	font-size:18px;
+}
+.uls li a{
+	color:#fff;
+	line-height: 30px;
+	font-size:14px;
+}
+.uls li .bigfont{
+	font-size:16px;
+	line-height: 15px;
+	margin-top: 40px;
+}
+.img1{
+	margin-top: 40px;
+	padding-left: 20px;
+}
+.meau_one .img2{
+	margin-top:40px;
+	margin-left: 809px;
+}
+.jiemian{
+	margin-left: 180px;
+	font-size: 14px;
+}
+.meau_one .img3{
+	margin-top:40px;
+	margin-left: 809px;
+}
+.meau_one .img4{
+	margin-top:40px;
+	margin-left: 809px;
+}
